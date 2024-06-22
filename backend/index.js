@@ -26,7 +26,7 @@ mongoose.connect(mongoURL, {
 
 app.use(cors(
     {
-        origin: ['sticky-stream-frontend-ek4usdk7r-rohit-kumars-projects-5e2437aa.vercel.app', 'http://localhost:3001'],
+        origin: ['https://frontend-ddk1ess41-rohit-kumars-projects-5e2437aa.vercel.app', 'http://localhost:3001'],
         credentials: true,
     }
 ));
