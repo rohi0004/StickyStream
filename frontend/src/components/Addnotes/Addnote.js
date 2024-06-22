@@ -103,7 +103,7 @@ function Addnote() {
     return (
         <>
             <Navbar />
-            <div className="vinay" style={{ border: '1px solid' }}>
+            <div className="Rohit" style={{ border: '1px solid' }}>
                 <div className="addNotes">
                     <h1>Add a Note</h1>
                     <form onSubmit={onClickFun}>
