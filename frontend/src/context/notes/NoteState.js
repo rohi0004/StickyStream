@@ -8,8 +8,6 @@ const NoteState = (props) => {
 
   const [notes, setnotes] = useState([]);
 
-
-  // get all notes  by the help of user id
   const getAllnotes = async () => {
     try {
       if (window.localStorage.getItem('token')) {
