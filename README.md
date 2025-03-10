@@ -70,16 +70,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Sign Up
 
-![Sign Up](https://github.com/rohi0004/StickyStream/assets/87049122/bcefc1ac-fbf6-4981-a26a-8d9c77a0d9f2)
+![image](https://github.com/user-attachments/assets/27615103-4590-4bcd-8bd3-1eca1bfce6f6)
+
 
 ## Login
 
-![Login](https://github.com/rohi0004/StickyStream/assets/87049122/62b6ebe2-75bd-482b-ab88-d155edd10d81)
+![image](https://github.com/user-attachments/assets/31f2f476-1a57-48b7-a542-eb4874d4c001)
+
 
 ## Add Notes
+![image](https://github.com/user-attachments/assets/ab6529f8-e27b-4536-b419-215e3294dcc6)
 
-![Add Notes](https://github.com/rohi0004/StickyStream/assets/87049122/6abecd52-8f67-41ec-bee6-c77bc5dcaea7)
 
 ## Dashboard
 
-![Dashboard](https://github.com/rohi0004/StickyStream/assets/87049122/a58ca47c-c881-4cd5-a43e-8755d6262ac4)
+![image](https://github.com/user-attachments/assets/e5ee1103-eaf6-4c18-8ba6-ed1a23c8a586)
