@@ -38,7 +38,11 @@ export default function Signup() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name: signup.name, email: signup.email, password: signup.password }),
+                body: JSON.stringify({ 
+                    name: signup.name, 
+                    email: signup.email, 
+                    password: signup.password 
+                }),
             });
             const json = await response.json();
             if (json.success) {
@@ -64,13 +68,53 @@ export default function Signup() {
 
     return (
         <>
+            {/* Inline media queries for responsiveness */}
+            <style>{`
+                @media (max-width: 768px) {
+                    .signup-container {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    .signup-card {
+                        margin-right: 0;
+                        margin-top: 20px;
+                        max-width: 100%;
+                    }
+                    .quotes-section {
+                        max-width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+            `}</style>
+            
             <ToastContainer />
             <Navbar />
+
             {!localStorage.getItem('token') ? (
-                <div className="signup-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: '100vh', backgroundColor: '#0A192F', padding: '20px' }}>
+                <div 
+                    className="signup-container" 
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        minHeight: '100vh',
+                        backgroundColor: '#0A192F',
+                        padding: '20px'
+                    }}
+                >
                     {/* Quotes Section */}
-                    <div className="quotes-section" style={{ flex: 1, padding: '20px', color: '#CCD6F6', maxWidth: '50%' }}>
-                        <h1 style={{ color: '#64FFDA', fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>Welcome to StickyStream</h1>
+                    <div 
+                        className="quotes-section" 
+                        style={{
+                            flex: 1,
+                            padding: '20px',
+                            color: '#CCD6F6',
+                            maxWidth: '50%'
+                        }}
+                    >
+                        <h1 style={{ color: '#64FFDA', fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>
+                            Welcome to StickyStream
+                        </h1>
                         <p style={{ fontSize: '18px', lineHeight: '1.6', color: '#8892B0' }}>
                             "Organize your thoughts, ideas, and tasks effortlessly with StickyStream. Your notes, your way."
                         </p>
@@ -80,15 +124,50 @@ export default function Signup() {
                     </div>
 
                     {/* Signup Card */}
-                    <div className="signup-card" style={{ flex: 1, maxWidth: '400px', padding: '30px', background: 'linear-gradient(145deg, #112240, #0A192F)', border: '1px solid #233554', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
-                        <h2 style={{ color: '#64FFDA', fontSize: '26px', fontWeight: 'bold', textAlign: 'center', marginBottom: '25px', position: 'relative' }}>
+                    <div 
+                        className="signup-card"
+                        style={{
+                            flex: 1,
+                            maxWidth: '400px',
+                            padding: '30px',
+                            marginRight: '20px', // <-- Added some right margin
+                            background: 'linear-gradient(145deg, #112240, #0A192F)',
+                            border: '1px solid #233554',
+                            borderRadius: '15px',
+                            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)',
+                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                            marginRight: '80px' 
+                        }}
+                    >
+                        <h2 
+                            style={{
+                                color: '#64FFDA',
+                                fontSize: '26px',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                marginBottom: '25px',
+                                position: 'relative'
+                            }}
+                        >
                             Sign Up
-                            <span style={{ content: '', display: 'block', width: '50px', height: '3px', backgroundColor: '#64FFDA', margin: '10px auto 0', borderRadius: '2px' }}></span>
+                            <span 
+                                style={{
+                                    display: 'block',
+                                    width: '50px',
+                                    height: '3px',
+                                    backgroundColor: '#64FFDA',
+                                    margin: '10px auto 0',
+                                    borderRadius: '2px'
+                                }}
+                            ></span>
                         </h2>
                         <form onSubmit={onSubmitFun}>
                             <div className="mb-3">
                                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                                    <FaUser className="icon" style={{ color: '#64FFDA', fontSize: '20px', marginRight: '10px' }} />
+                                    <FaUser 
+                                        className="icon" 
+                                        style={{ color: '#64FFDA', fontSize: '20px', marginRight: '10px' }} 
+                                    />
                                     <span style={{ fontSize: '14px', color: '#8892B0' }}>Full Name</span>
                                 </div>
                                 <input
@@ -96,7 +175,17 @@ export default function Signup() {
                                     minLength="3"
                                     value={signup.name}
                                     type="text"
-                                    style={{ backgroundColor: '#0A192F', border: '1px solid #233554', color: '#CCD6F6', borderRadius: '8px', padding: '12px', marginBottom: '20px', width: '100%', fontSize: '14px', transition: 'border-color 0.3s ease, box-shadow 0.3s ease' }}
+                                    style={{
+                                        backgroundColor: '#0A192F',
+                                        border: '1px solid #233554',
+                                        color: '#CCD6F6',
+                                        borderRadius: '8px',
+                                        padding: '12px',
+                                        marginBottom: '20px',
+                                        width: '100%',
+                                        fontSize: '14px',
+                                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+                                    }}
                                     placeholder="Enter Your Name"
                                     name="name"
                                     autoComplete="off"
@@ -105,14 +194,27 @@ export default function Signup() {
                             </div>
                             <div className="mb-3">
                                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                                    <FaEnvelope className="icon" style={{ color: '#64FFDA', fontSize: '20px', marginRight: '10px' }} />
+                                    <FaEnvelope 
+                                        className="icon" 
+                                        style={{ color: '#64FFDA', fontSize: '20px', marginRight: '10px' }} 
+                                    />
                                     <span style={{ fontSize: '14px', color: '#8892B0' }}>Email</span>
                                 </div>
                                 <input
                                     onChange={onChangeFun}
                                     value={signup.email}
                                     type="email"
-                                    style={{ backgroundColor: '#0A192F', border: '1px solid #233554', color: '#CCD6F6', borderRadius: '8px', padding: '12px', marginBottom: '20px', width: '100%', fontSize: '14px', transition: 'border-color 0.3s ease, box-shadow 0.3s ease' }}
+                                    style={{
+                                        backgroundColor: '#0A192F',
+                                        border: '1px solid #233554',
+                                        color: '#CCD6F6',
+                                        borderRadius: '8px',
+                                        padding: '12px',
+                                        marginBottom: '20px',
+                                        width: '100%',
+                                        fontSize: '14px',
+                                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+                                    }}
                                     placeholder="Enter Your Email"
                                     name="email"
                                     autoComplete="off"
@@ -121,7 +223,10 @@ export default function Signup() {
                             </div>
                             <div className="mb-3">
                                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                                    <FaLock className="icon" style={{ color: '#64FFDA', fontSize: '20px', marginRight: '10px' }} />
+                                    <FaLock 
+                                        className="icon" 
+                                        style={{ color: '#64FFDA', fontSize: '20px', marginRight: '10px' }} 
+                                    />
                                     <span style={{ fontSize: '14px', color: '#8892B0' }}>Password</span>
                                 </div>
                                 <input
@@ -129,7 +234,17 @@ export default function Signup() {
                                     minLength="5"
                                     value={signup.password}
                                     type="password"
-                                    style={{ backgroundColor: '#0A192F', border: '1px solid #233554', color: '#CCD6F6', borderRadius: '8px', padding: '12px', marginBottom: '20px', width: '100%', fontSize: '14px', transition: 'border-color 0.3s ease, box-shadow 0.3s ease' }}
+                                    style={{
+                                        backgroundColor: '#0A192F',
+                                        border: '1px solid #233554',
+                                        color: '#CCD6F6',
+                                        borderRadius: '8px',
+                                        padding: '12px',
+                                        marginBottom: '20px',
+                                        width: '100%',
+                                        fontSize: '14px',
+                                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+                                    }}
                                     placeholder="Enter Your Password"
                                     name="password"
                                     autoComplete="off"
@@ -137,10 +252,32 @@ export default function Signup() {
                                 />
                             </div>
                             <div className="mb-3">
-                                <button type="submit" style={{ backgroundColor: '#64FFDA', color: '#0A192F', border: 'none', padding: '12px 20px', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', width: '100%', fontSize: '16px', transition: 'background-color 0.3s ease, transform 0.3s ease' }} id="submitbtn">Sign Up</button>
+                                <button 
+                                    type="submit" 
+                                    style={{
+                                        backgroundColor: '#64FFDA',
+                                        color: '#0A192F',
+                                        border: 'none',
+                                        padding: '12px 20px',
+                                        borderRadius: '8px',
+                                        cursor: 'pointer',
+                                        fontWeight: 'bold',
+                                        width: '100%',
+                                        fontSize: '16px',
+                                        transition: 'background-color 0.3s ease, transform 0.3s ease'
+                                    }} 
+                                    id="submitbtn"
+                                >
+                                    Sign Up
+                                </button>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                                <Link to="/login" style={{ color: '#64FFDA', textDecoration: 'none', fontSize: '14px' }}>Already have an account? Login</Link>
+                                <Link 
+                                    to="/login" 
+                                    style={{ color: '#64FFDA', textDecoration: 'none', fontSize: '14px' }}
+                                >
+                                    Already have an account? Login
+                                </Link>
                             </div>
                         </form>
                     </div>
@@ -148,7 +285,21 @@ export default function Signup() {
             ) : (
                 <div style={{ textAlign: 'center', marginTop: '50px' }}>
                     <h1 style={{ color: '#64FFDA' }}>You are already logged in</h1>
-                    <button style={{ backgroundColor: '#64FFDA', color: '#0A192F', border: 'none', padding: '10px 20px', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold', marginTop: '20px' }} onClick={() => { navigate('/addnotes') }}>Add Notes</button>
+                    <button 
+                        style={{
+                            backgroundColor: '#64FFDA',
+                            color: '#0A192F',
+                            border: 'none',
+                            padding: '10px 20px',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            fontWeight: 'bold',
+                            marginTop: '20px'
+                        }} 
+                        onClick={() => { navigate('/addnotes') }}
+                    >
+                        Add Notes
+                    </button>
                 </div>
             )}
         </>

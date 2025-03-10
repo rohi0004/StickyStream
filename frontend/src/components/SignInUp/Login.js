@@ -78,7 +78,7 @@ const Login = () => {
                     </div>
 
                     {/* Login Card */}
-                    <div className="login-card" style={{ flex: 1, maxWidth: '400px', padding: '30px', background: 'linear-gradient(145deg, #112240, #0A192F)', border: '1px solid #233554', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+                    <div className="login-card" style={{ flex: 1, maxWidth: '400px', padding: '30px', background: 'linear-gradient(145deg, #112240, #0A192F)', border: '1px solid #233554', borderRadius: '15px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)', transition: 'transform 0.3s ease, box-shadow 0.3s ease', marginRight: '80px' }}>
                         <h2 style={{ color: '#64FFDA', fontSize: '26px', fontWeight: 'bold', textAlign: 'center', marginBottom: '25px', position: 'relative' }}>
                             Sign In
                             <span style={{ content: '', display: 'block', width: '50px', height: '3px', backgroundColor: '#64FFDA', margin: '10px auto 0', borderRadius: '2px' }}></span>
